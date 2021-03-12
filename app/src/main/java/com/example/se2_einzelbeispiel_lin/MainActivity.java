@@ -98,7 +98,9 @@ public class MainActivity extends AppCompatActivity {
             }
             output = Arrays.toString(input);
             output = output.substring(1,output.length()-1);
-            output = output.replaceAll("[2357]" +  "[,]" + " "  , "");
+            output = output.replaceAll(",| ", "");
+            output = output.replaceAll("[2357]", "");
+
         }
         return output;
     }
