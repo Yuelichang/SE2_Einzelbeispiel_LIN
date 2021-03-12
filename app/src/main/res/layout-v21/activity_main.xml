@@ -26,7 +26,7 @@
         android:layout_marginTop="40dp"
         android:ems="10"
         android:inputType="number"
-        android:gravity="center"
+        android:hint="12345678"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -37,6 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
         android:text="An Server senden"
+        android:backgroundTint="@color/aau_blue_dark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/answerText" />
@@ -47,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Sortieren und streichen"
-        android:background="@color/aau_blue_dark"
+        android:backgroundTint="@color/aau_blue_dark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/serverButton" />
