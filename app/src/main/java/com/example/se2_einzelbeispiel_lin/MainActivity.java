@@ -101,6 +101,10 @@ public class MainActivity extends AppCompatActivity {
             output = output.replaceAll(",| ", "");
             output = output.replaceAll("[2357]", "");
 
+            if (output.length() == 0) {
+                output = "Deine Matrikelnummer besteht nur aus Primzahlen :)";
+            }
+
         }
         return output;
     }

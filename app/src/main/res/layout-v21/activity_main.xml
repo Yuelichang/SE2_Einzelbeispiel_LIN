@@ -35,12 +35,12 @@
         android:id="@+id/serverButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:text="An Server senden"
+        android:layout_marginTop="238dp"
         android:backgroundTint="@color/aau_blue_dark"
+        android:text="An Server senden"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/answerText" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/sortButton"

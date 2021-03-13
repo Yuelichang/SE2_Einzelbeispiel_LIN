@@ -25,8 +25,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:ems="10"
+        android:hint="12345678"
         android:inputType="number"
-        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -35,11 +35,11 @@
         android:id="@+id/serverButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="153dp"
         android:text="An Server senden"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/answerText" />
+        app:layout_constraintTop_toBottomOf="@+id/numText" />
 
     <Button
         android:id="@+id/sortButton"
@@ -47,7 +47,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Sortieren und streichen"
-        android:background="@color/aau_blue_dark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/serverButton" />
