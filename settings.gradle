@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "SE2_Einzelbeispiel_LIN"
