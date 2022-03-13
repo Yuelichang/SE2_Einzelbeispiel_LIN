@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">SE2_Einzelbeispiel_LIN</string>
+    <string name="antwort_vom_server">Antwort vom Server</string>
+    <string name="berechnung">Berechnung:</string>
+    <string name="gib_deine_matrikelnummer_ein">Gib deine Matrikelnummer ein:</string>
+    <string name="berechne">berechne</string>
+    <string name="abschicken">Abschicken</string>
+    <string name="_123456789">123456789</string>
 </resources>

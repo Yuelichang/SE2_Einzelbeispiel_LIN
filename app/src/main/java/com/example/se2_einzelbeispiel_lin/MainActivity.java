@@ -3,6 +3,7 @@ package com.example.se2_einzelbeispiel_lin;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -22,9 +23,9 @@ public class MainActivity extends AppCompatActivity {
     TextView calcView;
     TextView serverView;
 
-    String userInput;
+
     String serverText;
-    String nullText = "Bite gib deine Matrikelnummer ein";
+    String nullText = "Bitte gib deine Matrikelnummer ein";
 
 
 
@@ -51,15 +52,24 @@ public class MainActivity extends AppCompatActivity {
             } catch (InterruptedException ie) {
             }
             serverView.setText(serverText);
+            calcView.setText("");
         });
 
 
 //------------------OnClick CalcBtn-----------------------------
 
         calcBtn.setOnClickListener(view -> {
-            String output = toBinary(checksum());
+
+            String userInput = mNrTxt.getText().toString();
+            String output = nullText;
+
+            if (userInput.length() > 0) {
+                output = toBinary(checksum(userInput));
+            }
             calcView.setText(output);
+            serverView.setText("");
         });
+
     }
 
 //-------------------create Thread------------------------------
@@ -67,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
     public Runnable createThread() {
         Runnable runnable = () -> {
             try {
-                userInput = mNrTxt.getText().toString();
+                String userInput = mNrTxt.getText().toString();
                 Socket clientSocket = new Socket("se2-isys.aau.at", 53212);
                 DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
                 BufferedReader inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
@@ -83,14 +93,14 @@ public class MainActivity extends AppCompatActivity {
 
 //-----------------Quersumme berechnen-------------------------
 
-    public String checksum() {
-        String output = "";
-        userInput = mNrTxt.getText().toString();
+    public String checksum(String userInput) {
+
         char[] userInputArray = userInput.toCharArray();
         int sum = 0;
         for (int i = 0; i < userInputArray.length; i++) {
             sum += Character.getNumericValue(userInputArray[i]);
         }
+
         return String.valueOf(sum);
     }
 
@@ -99,13 +109,15 @@ public class MainActivity extends AppCompatActivity {
     public String toBinary(String sum) {
         StringBuilder result = new StringBuilder();
         int number = Integer.parseInt(sum);
+        if (number == 0) {
+            return "0";
+        }
         while (number!=0) {
             result.append(number % 2);
             number = number /2;
         }
         result.reverse();
-        if (result.length() != 0 ) { return result.toString(); }
-        else return nullText;
+        return result.toString();
     }
 }
 
